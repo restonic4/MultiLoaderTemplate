@@ -1,5 +1,6 @@
 package com.example.my_mod.platform.services;
 
+import java.nio.file.Path;
 import java.util.Objects;
 
 public interface IPlatformHelper {
@@ -50,4 +51,10 @@ public interface IPlatformHelper {
      * @return The version string.
      */
     String getModVersion();
+
+    /**
+     * Gets the path to the game's configuration directory.
+     * * @return The Path to the config folder.
+     */
+    Path getConfigDirectory();
 }

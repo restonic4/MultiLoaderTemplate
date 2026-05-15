@@ -4,6 +4,9 @@ import com.example.my_mod.Constants;
 import com.example.my_mod.platform.services.IPlatformHelper;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
+import net.neoforged.fml.loading.FMLPaths;
+
+import java.nio.file.Path;
 
 public class NeoForgePlatformHelper implements IPlatformHelper {
 
@@ -31,5 +34,10 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
                 .getModContainerById(Constants.MOD_ID)
                 .map(container -> container.getModInfo().getVersion().toString())
                 .orElse("UNKNOWN");
+    }
+
+    @Override
+    public Path getConfigDirectory() {
+        return FMLPaths.CONFIGDIR.get();
     }
 }

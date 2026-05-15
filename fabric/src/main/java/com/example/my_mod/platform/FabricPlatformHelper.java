@@ -5,6 +5,7 @@ import com.example.my_mod.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 
+import java.nio.file.Path;
 import java.util.Optional;
 
 public class FabricPlatformHelper implements IPlatformHelper {
@@ -33,5 +34,10 @@ public class FabricPlatformHelper implements IPlatformHelper {
             return container.get().getMetadata().getVersion().getFriendlyString();
         }
         return "UNKNOWN";
+    }
+
+    @Override
+    public Path getConfigDirectory() {
+        return FabricLoader.getInstance().getConfigDir();
     }
 }
